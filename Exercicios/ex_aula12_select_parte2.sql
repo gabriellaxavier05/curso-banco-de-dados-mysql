@@ -62,3 +62,15 @@ select count(*) from cursos;
 -- Contando quantos registros na tabela 'cursos' tem a carga maior que 40: 
 select count(*) from cursos
 where carga > 40;
+
+-- Retornando a maior carga horária de 'cursos':
+select max(carga) from cursos;
+
+-- Retornando o menor número de aulas de 'cursos':
+select min(totaulas) from cursos;
+
+-- Somando os valores da coluna 'totaulas' de 'cursos':
+select sum(totaulas) from cursos;
+
+-- Retornando a média de valores da coluna 'totaulas' de 'cursos':
+select avg(totaulas) from cursos;
