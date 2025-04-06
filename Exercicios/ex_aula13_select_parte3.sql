@@ -32,6 +32,21 @@ group by carga
 having count(nome) > 3;
 -- Acima, com o having será exibido apenas as cargas horárias que possuem + de 3 cursos.
 
--- O código abaixo é o mesmo resultado que o código anterior.
+-- O código abaixo é dá o mesmo resultado que o código anterior.
 select nome, carga from cursos
 where carga = 40;
+
+-- Média de carga de cursos
+select avg(carga) from cursos;
+
+-- Selecione a carga e conte todos os registros da tbcursos que tenham ano maior que 2015, agrupe por carga e que tenha a carga maior que 36.6
+select carga, count(*) from cursos
+where ano > 2015
+group by carga
+having carga > 36.6;
+
+-- O código abaixo é dá o mesmo resultado que o código anterior.
+select carga, count(*) from cursos
+where ano > 2015
+group by carga
+having carga > (select avg(carga) from cursos); -- carga acima da média
